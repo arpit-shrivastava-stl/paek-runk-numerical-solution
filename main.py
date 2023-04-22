@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import constants as c
 from scipy.optimize import fsolve as solver
-
+from energy_equation import energy_equation
 
 n = c.n  # Number of grid points in z direction
 dz = c.dz  # Distance between two grid points in centimeter
@@ -11,12 +11,12 @@ n0 = c.n0  # Refractive index of glass
 gamma = c.gamma  # value of absorption coefficient in cm-1
 sigma = c.sigma  # stefan boltzman constant in W/m2·K
 rho = c.rho  # density of glass in g/cm3
-i = np.linspace(0, n, n+1)  # cell index array
-z = i*dz  # discretized z axis
-L = n*dz  # total length of domain
+i = np.linspace(0, n, n + 1)  # cell index array
+z = i * dz  # discretized z axis
 a = 5  # slider for origin of the curve. change to move the curve on z axis while holding its shape
 b = 10  # slider for increasing/decreasing the length of the neck-down region
-R = R1*(1/(1 + np.exp(-a + i/(n/b))))
+R = R1 * (1 / (1 + np.exp(-a + i / (n / b))))
+
 
 # plt.scatter(i*0.1, R)
 # plt.title("Initial neck-down profile")
@@ -27,7 +27,12 @@ R = R1*(1/(1 + np.exp(-a + i/(n/b))))
 
 # below function return n-1 equations for the T points which need to be solved
 def system_of_T_equations(T):
+    global R
+    global n
+    return [energy_equation(T, R, i) for i in range(n - 1)]
 
 
 # below function solves for n-1 T points, adds end points, and returns T array
-def T_solver():
+T_solution = solver(system_of_T_equations, 800*np.ones((n - 1,), dtype=int))
+plt.plot(z[range(n-1)], T_solution)
+plt.show()
