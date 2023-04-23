@@ -35,7 +35,15 @@ def system_of_T_equations(T):
 
 # below function solves for n-1 T points, adds end points, and returns T array
 
-output = solver(system_of_T_equations, 1500*np.ones((n - 1,)), full_output=True)
-
-plt.scatter(range(output[0].size), output[0])
+output = solver(system_of_T_equations, c.Ts*np.ones((n - 1,)), full_output=True, factor=0.1, epsfcn=0.001)
+print(output[2])
+print(output[3])
+T_filtered = []
+value_filtered = []
+for i in range(output[0].__len__()):
+    if 2000 > output[0][i] > 0:
+        T_filtered.append(output[0][i])
+        value_filtered.append(output[1]['fvec'][i])
+plt.scatter(range(T_filtered.__len__()), T_filtered)
+# plt.scatter(range(value_filtered.__len__()), value_filtered)
 plt.show()

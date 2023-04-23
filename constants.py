@@ -24,9 +24,9 @@ epsilon = 0.3 # unitless
 h = 2*1e-2 #W/cm2C
 sigma = 5.67*1e-4  # in kg cm2 s-2 K-1
 n0 = 1.47
-Q21 = 1000 # some arbitrary number
+Q21 = 100 # some arbitrary number
 p = (16*(n0**2)*sigma)/(3*gamma)
 
 L = 20 # length of domain in cm
-dz = 0.1  # Distance between two grid points in centimeter
+dz = 0.008  # Distance between two grid points in centimeter
 n = int(L/dz)  # number of grid points
