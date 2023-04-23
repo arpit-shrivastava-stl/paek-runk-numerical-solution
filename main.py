@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import constants as c
 from scipy.optimize import fsolve as solver
 from energy_equation import energy_equation
+from glass_viscosity import viscosity
 
 n = c.n  # Number of grid points in z direction
 dz = c.dz  # Distance between two grid points in centimeter
@@ -33,6 +34,7 @@ def system_of_T_equations(T):
 
 
 # below function solves for n-1 T points, adds end points, and returns T array
-T_solution = solver(system_of_T_equations, 800*np.ones((n - 1,), dtype=int))
-plt.plot(z[range(n-1)], T_solution)
-plt.show()
+
+output = solver(system_of_T_equations, 1000*np.ones((n - 1,)), full_output=True)
+
+
