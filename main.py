@@ -35,6 +35,7 @@ def system_of_T_equations(T):
 
 # below function solves for n-1 T points, adds end points, and returns T array
 
-output = solver(system_of_T_equations, 1000*np.ones((n - 1,)), full_output=True)
+output = solver(system_of_T_equations, 1500*np.ones((n - 1,)), full_output=True)
 
-
+plt.scatter(range(output[0].size), output[0])
+plt.show()
