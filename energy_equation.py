@@ -5,6 +5,9 @@ from g import g
 
 def energy_equation(T, R, i):
     # here T is the temperature array
+    # R is the radius array
+    # i gives the index of grid point, corresponds
+    # to z coordinate
     if i == 0:
         return (Ts + T[i + 1] - 2 * T[i])  + \
             f(T[i], R, i+1) * ((T[i + 1] + Ts) * (dz/2)) + \

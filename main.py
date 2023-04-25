@@ -16,9 +16,9 @@ sigma = c.sigma  # stefan boltzman constant in W/m2·K
 rho = c.rho  # density of glass in g/cm3
 i = np.linspace(0, n, n + 1)  # cell index array
 z = i * dz  # discretized z axis
-a = 5  # slider for origin of the curve. change to move the curve on z axis while holding its shape
-b = 10  # slider for increasing/decreasing the length of the neck-down region
-R = R1 * (1 / (1 + np.exp(-a + i / (n / b))))
+p = 5  # slider for origin of the curve. change to move the curve on z axis while holding its shape
+q = 10  # slider for increasing/decreasing the length of the neck-down region
+R = R1 * (1 / (1 + np.exp(-p + i / (n / q))))
 
 
 # plt.scatter(i*0.1, R)
