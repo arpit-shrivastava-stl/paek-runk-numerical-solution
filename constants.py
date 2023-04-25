@@ -18,7 +18,7 @@ Tm = 2000  # C
 T0 = 1100  # C
 g = 980  # cm/s2
 alpha = 300  #dyn/cm
-# Emmisivity- currently assuming to be constant, but will be later replaced with a function
+# Emissivity-currently assuming to be constant, but will be later replaced with a function
 epsilon = 0.3 # unitless
 # heat transfer coefficient, currently assuming to be a constant, but will be later replaced with a function
 h = 2*1e-2 #W/cm2C
@@ -28,5 +28,5 @@ Q21 = 1000 # some arbitrary number
 p = (16*(n0**2)*sigma)/(3*gamma)
 
 L = 20 # length of domain in cm
-dz = 0.1  # Distance between two grid points in centimeter
+dz = 0.02  # Distance between two grid points in centimeter
 n = int(L/dz)  # number of grid points
