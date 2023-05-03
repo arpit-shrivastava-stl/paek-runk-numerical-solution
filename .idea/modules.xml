@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/paek_and_runk_numerical_method.iml" filepath="$PROJECT_DIR$/.idea/paek_and_runk_numerical_method.iml" />
+      <module fileurl="file://$USER_HOME$/Documents/Python_Projects/paek_runk_numerical_solution_using_bvp_solver/.idea/paek_runk_numerical_solution_using_bvp_solver.iml" filepath="$USER_HOME$/Documents/Python_Projects/paek_runk_numerical_solution_using_bvp_solver/.idea/paek_runk_numerical_solution_using_bvp_solver.iml" />
     </modules>
   </component>
 </project>
